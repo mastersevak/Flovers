@@ -1,0 +1,34 @@
+/*==================================
+=            CACHE KEYS            =
+==================================*/
+
+
+
+	cacheKey     						
+/*===================*/							/*==========*/
+
+<<<<<<< HEAD
+Settings								=>	settings
+SystemSettings							=>	system settings
+listdata.Brand							=>	brands
+listdata.Supplier						=>	suppliers
+listdata.Supplier.managers				=>	supplier managers
+Supplier.update.timelimits				=>	suppliers next_update times (timestamp)
+Supplier.sites							=>	suppliers sites links
+listdata.ProductCategory				=>	categories
+ProductCategory.treeArray.{$idRoot}		=>	categories tree by root
+Variation.values						=>	variations values
+Variation.vars							=>	variations
+listdata.Variation						=>	variation names
+listdata.VariationValue.{$idVariation}	=>	
+Shift.user.{$idUser}					=>	todays actual timesheets by user id
+listdata.User 							=>	users
+listdata.User.job.{$idJob}
+listdata.User.id.{$id}
+listdata.User.group.{$id}
+listdata.User.all
+listdata.Storehouse						=> Склады
+listdata.UserLegalEntity_Old			=> Старая таблица юр. лиц
+listdata.RoutePlan						=> Планы маршрутов
+listdata.Metro 							=> станции метро
+listdata.Organization					=> организации

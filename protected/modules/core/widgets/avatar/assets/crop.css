@@ -1,0 +1,60 @@
+.crop-container{
+    text-align: center;
+}
+
+.crop-container .sizes {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.crop-container .crop-area {
+    margin: 15px 0;
+
+    min-height: 50px;
+    background: url('loader5.gif') no-repeat center center;
+
+    text-align: center;
+}
+
+.crop-container .crop-area .big{
+    display: inline-block;
+}
+
+.crop-container .sizes > div{
+    display: inline-block;
+    margin-right: 15px;
+    float: left;
+
+    border: 5px solid white;
+
+    -webkit-box-shadow: 0 0 5px #aaa;
+    -moz-box-shadow: 0 0 5px #aaa;
+    box-shadow: 0 0 5px #aaa;
+}
+
+.crop-container .sizes > div:last-child{
+    margin-right: 0;
+}
+
+.crop-container .sizes img{
+    opacity: 0.5;
+}
+
+.crop-container .sizes img.active{
+    opacity: 1;
+}
+
+.crop-container .apply-crop{
+    background-image: none;
+    margin: 0 auto 15px auto;
+    font-size: 17px;
+    padding: 6px 10px;
+    font-weight: normal;
+    width: 132px;
+    display: block;
+}
+
+.crop-container .apply-crop i{
+    display: inline-block;
+    margin-right: 8px;
+}

@@ -1,0 +1,54 @@
+@import "compass"
+
+.popup.comments
+	position: fixed
+	right: 20px
+	bottom: 0
+	z-index: 1000
+
+	background: #f2f4f6
+	padding: 20px
+	width: 400px 
+	font-size: 13px
+	margin-bottom: 0 !important
+	.scroller:empty
+		background: image-url('loaders/20.GIF') no-repeat center center
+	span.empty
+		text-align: center
+		display: block
+		font-size: 18px
+	+clearfix
+	
+	form
+		background: white 
+
+	.input-block
+		border: 1px solid #ddd
+		border-top: none
+		margin: 0
+		padding: 10px 0
+		background: rgba(247, 247, 247, 0.36)
+		textarea
+			padding: 0 10px !important
+			border: none
+			width: 100%
+			height: 50px
+			background: none !important
+			box-shadow: none !important
+			border: none !important
+			outline: none !important
+				
+	.comment
+		margin-bottom: 20px
+		p.body
+			font-size: 15px 
+	.date
+		float: right
+		text-align: right
+		line-height: 19px
+		font-size: 12px
+		font-weight: 600 
+		span
+			display: block
+			font-weight: normal
+			font-size: 11px	

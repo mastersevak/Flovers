@@ -1,0 +1,23 @@
+.horlist{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.horlist li{
+	display: inline-block;
+	margin-right: 7px;
+}
+
+.edit-album{
+	display: block;
+	font-weight: bold;
+	margin-top: 6px;
+	margin-bottom: 6px;
+
+}
+
+.edit-album:hover{
+	text-decoration: underline;
+
+}

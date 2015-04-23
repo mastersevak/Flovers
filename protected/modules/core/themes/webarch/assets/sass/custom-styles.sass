@@ -1,0 +1,1297 @@
+@import "compass"
+@import "variables"
+
+/**	
+ * TAGS
+ */
+body 
+	background: white  
+
+i 
+	font-family: FontAwesome
+
+input
+	&:-webkit-autofill 
+		//Removing input background colour for Chrome autocomplete
+		+box-shadow(0 0 0px 1000px white inset !important)
+		background-color: white !important
+		&:focus
+			+box-shadow(inset 1px 1px 2px rgba(0,0,0,0.1) !important) 
+			background-color: white !important
+	
+	&[readonly]
+		+box-shadow(inset 1px 1px 2px rgba(0,0,0,0.1) !important) 
+		background-color: #f4f5f7
+		color: #808080
+		cursor: not-allowed !important 
+
+	//small inputs and selects
+	&.small
+		&[type="text"], &[type="password"]
+			display: block
+			font-size: 12px
+			padding: 2px 6px !important
+			min-height: 26px !important
+
+input[data-language], textarea[data-language]
+	padding-right: 25px
+
+input[data-language="en"], textarea[data-language="en"]
+	background: url(../img/flags/us.png) 99% 10px no-repeat #ffffff !important
+
+input[data-language="ru"], textarea[data-language="ru"]
+	background: url(../img/flags/ru.png) 99% 10px no-repeat #ffffff !important
+
+input[data-language="hy"], textarea[data-language="hy"]
+	background: url(../img/flags/am.png) 99% 10px no-repeat #ffffff !important
+	
+
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea,
+.uneditable-input
+	resize: none
+	margin-bottom: 0
+	+box-shadow(1px 1px 2px #999 inset !important) 
+	+box-sizing(border-box)
+	min-height: 36px
+	border: 1px solid #A8AAAC //#d9d9d9
+	border-top: 1px solid #797A7B //#c0c0c0
+
+	&:hover
+		border: 1px solid #b9b9b9
+		border-top: 1px solid #a0a0a0
+		+box-shadow(inset 0 1px 2px rgba(0,0,0,0.1))
+
+	&:focus
+		outline: none
+		border-color: rgba(82, 168, 236, 0.8)
+		+box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important) 
+
+button:not(.without-value) i
+	margin-right: 7px
+
+label
+	margin-bottom: 0
+
+select
+	width: auto 
+	&.small
+		min-height: 26px
+		height: 26px !important	
+
+a.checkbox //для случаев когда используется checkbox как ссылка
+	background-color: #eceff3
+	border: 1px solid #c2c6cb
+	border-radius: 3px 
+	display: inline-block
+	width: 17px !important
+	min-height: 17px !important	
+	position: relative
+	
+	&.checked
+		&:before
+			content: "\F00C"
+			width: 16px
+			height: 16px 
+			font-family: 'FontAwesome'
+			position: absolute
+			bottom: 1px
+			left: 0px
+			color: white	
+
+		&.c-red
+			background-color: $red
+			border: 1px solid $red
+		&.c-green
+			background-color: $green
+			border: 1px solid $green
+		&.c-orange
+			background-color: $orange
+			border: 1px solid $orange
+		&.c-yellow
+			background-color: $yellow
+			border: 1px solid $yellow
+
+/**
+ * Global classes
+ */
+.blue-input
+	color: #246a8e !important
+	background-color: #ebf6fb !important
+	border-color: #bfd4de !important
+	&.big
+		font-size: 17px
+		line-height: 18px
+
+.error, .errorMessage
+	font-size: 12px
+	color: #722A3B
+	display: block
+
+.error-main
+	position: static
+
+.checkbox 
+	input[type=checkbox]:checked + label
+		color: inherit 
+	input[type=checkbox]:checked + label::after
+		margin-top: 1px
+
+	label 
+		color: inherit 
+
+		&:empty
+			margin: 0 !important
+			width: 17px
+			height: 17px
+	
+		&:before
+			margin: 0
+		
+.control-group
+	margin-bottom: 15px
+	input[type="text"], input[type="password"]
+		width: 100%
+
+.radio 
+	label
+		height: 17px
+		margin-bottom: 0
+		&:empty
+			margin-right: 0
+		&:before
+			top: 1px
+
+.close
+	outline: none
+
+.small
+	width: auto
+
+.hint
+	padding: 0
+	color: #ACACAC
+	font-style: italic
+	font-size: 11px
+
+.last:after
+	visibility: hidden
+	display: block
+	font-size: 0
+	content: " "
+	clear: both
+	height: 0
+
+.btn:focus, .btn:active:focus, .btn.active:focus
+	outline: none
+
+/**
+ * Form elements
+ */
+.std-form
+	.control-group
+		background: #F8F8F8
+		margin-bottom: 0
+		margin-top: -1px
+		border: 1px solid #ddd
+
+		> label 
+			display: inline-block
+			float: left
+			padding: 10px
+			background: #F8F8F8 
+			color: #6f7b8a
+			width: 200px
+			vertical-align: top
+			a
+				color: #6f7b8a
+		.field
+
+			background: #fff
+			display: block
+			padding: 10px
+			margin-left: 200px 
+			border-left: 1px solid #ddd
+
+			textarea
+				width: 100%
+
+			label
+				display: inline-block
+
+.slug 
+	span
+		display: block
+	label
+		float: none !important
+		width: auto !important
+		padding: 0 !important
+		background: none !important
+		padding-left: 22px !important
+		margin-right: 0 !important
+
+	.slug-checkbox
+		margin-top: 6px
+		float: right
+
+	.slug-text
+		margin-right: 90px
+
+/**	
+ * ELRTE fix
+ */
+.el-dialogform
+	.uneditable-input, 
+	textarea, 
+	input[type="text"], 
+	input[type="password"], 
+	input[type="datetime"], 
+	input[type="datetime-local"], 
+	input[type="date"], 
+	input[type="month"], 
+	input[type="time"], 
+	input[type="week"], 
+	input[type="number"], 
+	input[type="email"], 
+	input[type="url"], 
+	input[type="search"], 
+	input[type="tel"], 
+	input[type="color"]
+		min-height: 30px !important
+
+	select
+		min-height: 30px !important
+		height: 30px !important
+	
+	table td
+		padding-bottom: 6px !important
+		font-size: 12px
+
+	.el-paddinginput
+		input, select
+			margin-bottom: 6px !important
+		input
+			margin-right: 6px !important
+
+	fieldset 
+		legend
+			width: auto
+			display: inline-block
+			background-color: #fff
+			border: none
+			margin-left: 10px
+
+.elrte-image-preview
+	height: 150px
+	padding: 10px 
+	padding-top: 0
+
+.el-rte .toolbar ul 
+	li
+		border: 1px solid transparent !important
+		width: 24px
+		height: 24px
+
+		&.hover
+			border: 1px solid #54b9bf !important
+
+		&.el-select
+			border: 1px solid #ccc !important
+			background-color: #fefefe !important
+			height: 24px !important
+			width: 124px !important
+
+			&.hover
+				border: 1px solid #54b9bf !important
+
+			label
+				height: 22px !important
+				line-height: 20px !important
+				font-size: 12px !important
+				width: 106px !important
+
+.el-select 
+	height: 30px !important
+	width: 113px !important
+
+	label
+		height: 28px !important
+		line-height: 28px !important
+
+	.list div:empty
+		height: 20px !important
+
+.el-colorpicker
+	margin-top: -10px !important
+	margin-left: 6px !important
+	width: 18px !important
+	height: 18px !important
+
+.elfinder .elfinder-button
+	width: 24px !important
+	height: 24px !important
+
+.elfinder .elfinder-button.elfinder-button-search
+	width: 200px !important
+
+	input
+		min-height: 26px !important
+		padding-left: 22px !important
+		line-height: 16px
+
+.elfinder-button-icon
+	width: 24px !important
+
+.elfinder-cwd-view-icons 
+	.elfinder-cwd-filename
+		input
+			padding: 3px
+			min-height: 16px
+			height: 16px
+			line-height: 16px 
+			background-color: transparent
+			background: none
+			border: none
+			outline: none
+			color: #fff !important
+
+/**
+ * Tables
+ */
+.grid-view table.table-hover tr.ajaxloaded 
+	&.selected
+		background: none !important
+	&:hover
+		background: none !important	
+
+//remove table striped background
+.table-striped > tbody > tr:nth-child(odd) > td, 
+.table-striped > tbody > tr:nth-child(odd) > th
+	background: none
+
+.table-striped tbody > tr:nth-child(2n+1) > td, 
+.table-striped tbody > tr:nth-child(2n+1) > th
+	background-color: transparent
+	background: none
+
+.table-bordered th
+	background: none
+
+.table-bordered > thead > tr > th
+	background-color: #ecf0f2	
+
+.table-print
+	color: #000
+	> thead > tr, > tbody > tr
+		border-bottom: 1px solid #000 !important
+
+.table > thead > tr > th 
+	padding: 6px
+	text-align: center
+
+.dropdown-menu
+	z-index: 1050 
+	&.fast-links
+		background: #d3dde9
+		> li > a
+			padding: 0px 10px
+			color: #555567
+
+.user-info-wrapper .user-info 
+	.username 
+		margin-top: 6px
+		span
+			display: block
+
+.logo
+	@media (max-width: 767px)
+		margin-top: 20px
+		margin-left: 25px
+	
+.page-title 
+	p
+		font-size: 14px
+	h3 a
+		color: #505458
+
+.page-sidebar  
+	@media (max-width: 1025px)
+		display: none
+	.page-sidebar-wrapper
+		> ul 
+			> li 
+				> a 
+					padding-left: 15px
+					padding-right: 15px
+					.arrow:before  
+						content: "\f105"
+				> ul.sub-menu > li > a
+					padding-left: 40px !important
+				
+
+			> li.open > a, > li > a:hover, > li:hover > a
+				padding-left: 15px
+				padding-right: 15px
+
+	&.mini
+		background-color: $page-side-mini !important
+
+		.page-sidebar-wrapper
+			> ul 
+				> li 
+					> a
+						padding-left: 13px
+						&:hover
+							background: darken($page-side-mini, 5%)
+					> ul.sub-menu > li > a
+						padding-left: 20px !important
+				
+					&.open > a, &:hover > a
+						background: darken($page-side-mini, 5%)
+					
+					ul.sub-menu
+						background-color: darken($page-side-mini, 5%)
+						padding: 8px 0 7px 0
+
+						li > a:hover
+							background: none !important
+							color: white
+
+.page-content 
+	background: #fff
+	position: static
+	overflow: inherit
+	+transition(none !important)
+	// height: 100%
+	min-height: 0 !important
+	@media (min-width: 980px)
+		margin-top: 0 !important
+		margin-left: 0 !important
+
+	@media (max-width: 1025px)
+		margin-left: 0 !important
+
+	.content
+		padding-top: 20px
+
+	.breadcrumb 
+		a
+			margin-left: 0
+		.arrow
+			margin-left: 10px
+
+	&.tabs
+		.page-header
+			padding-bottom: 60px
+		> .content > .nav-tabs,
+		.settings-content > .nav-tabs
+			margin-top: -65px
+			border-bottom: none
+			> li > a
+				padding: 15px 20px
+			> .active > a
+				+box-shadow(none)
+
+		.tab-content
+			border: none
+			.tab-pane
+				padding-left: 0
+				padding-right: 0
+	
+	&.condensed
+		margin-left: 0
+
+	.content
+		@media (max-width: 767px)
+			padding-left: 26px
+			padding-right: 26px
+
+.nav-tabs
+	display: table
+	> li > a
+		padding: 10px 20px
+		min-width: 0
+
+.nav .tools, nav.tools
+	a
+		display: inline-block
+	button
+		position: relative
+		background: url('../img/icon/portlet-tray.png') no-repeat
+		border: none
+		outline: none
+		&.config
+			background-position: -3px -32px
+			width: 22px
+			height: 22px
+
+.user-info-small
+	.username
+		line-height: 19px
+		font-weight: 600
+		span
+			display: block
+			font-weight: normal
+			font-size: 12px
+
+.popup
+	display: none
+	+box-shadow(-1px -1px 3px #e8e8e8)
+	.grid-title
+		background: none !important
+		padding: 7px 15px 3px 15px !important
+
+		h4
+			margin: 0
+
+	.grid-body
+		padding: 15px !important
+		padding-bottom: 0 !important
+
+#main-header
+	+box-shadow(0 2px 8px -1px rgba(0,0,0,0.4))
+	top: 0
+
+.page-header
+	// background: #f8f8f8
+	background: white
+	width: 100%
+	padding: 75px 26px 3px 26px
+	margin-top: 0px
+	margin-bottom: 0
+	// +box-shadow(0px 0px 4px #C0C0C0 inset)
+
+.menu-top
+	margin-top: -5px 
+	margin-left: 10px
+	float: left
+	a 
+		+transition(none !important)
+	.menu 
+		padding-left: 0
+		margin-top: 12px
+		> li
+			display: inline-block
+			> a
+				color: $page-side-mini
+				padding: 10px
+				font-size: 1.6em
+
+				&:hover
+					color: $dark-blue
+ 
+		li
+			position: relative
+			list-style: none
+			div
+				position: absolute
+				z-index: 100
+				padding-top: 14px
+				left: 5px
+				ul
+					display: none
+					padding: 0
+					width: 215px
+					overflow: hidden
+					+border-radius(4px)
+					+box-shadow(1px 1px 5px #aaa)
+					li
+						background-color: white
+						padding: 0
+						a
+							text-align: left
+							font-size: 13px 
+							color: $dark-gray
+							padding: 7px 15px
+							display: block
+			&:hover
+				ul
+					display: block
+					li:hover
+						background-color: $blue
+						a
+							color: #fff
+	
+.top-filters 
+	// +box-shadow(inset 0 0 5px -1px)
+	margin-right: 6px
+	display: inline-block
+
+	&.compact
+		position: absolute
+		top: 80px
+		right: 0
+		padding: 8px 10px 2px 10px
+		margin-right: 0
+		background: #fff
+		+box-shadow(-1px 1px 5px -2px)
+		+border-top-left-radius(3px)
+		+border-bottom-left-radius(3px)
+		.btn-copy-filters, .btn-show-hidden-filters, .btn-clear-filters, .btn-submit
+			display: none !important
+
+		.filter-tools
+			margin-bottom: 0
+			margin-top: 0
+			margin-right: 0
+
+		.filter-block
+			display: none !important 
+
+		.btn-toggle-filters
+			margin-right: 0 !important
+			&:before
+				content: "\f0fe" //plus
+
+		br[clear]
+			display: none
+	
+	.filter-tools 
+		margin-top: -26px 
+		margin-right: 2px
+		> a
+			color: lighten(#505458, 20%)
+			font-size: 16px
+			margin-right: 3px
+			margin-bottom: 6px
+			&:hover 
+				color: #505458
+			&.search
+				background: lighten(#505458, 20%)
+				padding: 0 7px !important
+				font-size: 11px
+				&:hover
+					background: lighten(#505458, 8%)
+
+
+		.dropdown-menu
+			padding: 5px 0
+			+box-shadow(-2px 2px 8px -1px)
+			
+			&:empty
+				padding: 0
+			li
+				padding: 5px 10px
+				white-space: nowrap
+				&:hover 
+					background: #d8d8d8
+				a
+					padding: 3px 10px
+				.checkbox label
+					display: block
+					margin-bottom: 0
+
+		&.vertical
+			margin-top: -10px
+			margin-right: -36px
+			> a
+				display: block
+				margin-bottom: 5px
+
+	
+	.filter-block
+		clear: none !important
+		float: left
+		min-width: 120px
+		margin-right: 5px
+		margin-bottom: 10px
+		.grid-title 
+			position: relative 
+			padding: 4px 8px 0px 8px
+			height: 25px
+			h4 
+				margin-bottom: 0
+				font-size: 12px
+				line-height: 16px 
+				position: absolute   
+				width: 100%
+				padding-right: 55px
+				color: #000 !important
+			.tools 
+				position: absolute
+				right: 10px
+				top: 8px
+				.move 
+					background-position: -196px -38px
+					width: 10px
+					height: 10px
+					top: -5px
+		
+
+		.grid-body
+			padding: 10px
+			// background-color: $gray-bg !important
+			background-color: #ECECD5 !important
+			color: #000 !important
+				
+			fieldset
+				border-top: 1px solid $gray
+				min-width: 100px
+				legend
+					font-size: 12px
+					background-color: $gray-bg !important
+					margin: 0 0 5px 0 !important
+					width: auto
+					border-bottom: 0
+					padding-right: 5px
+				label
+					margin-right: 5px
+			label
+				font-size: 12px
+				margin-bottom: 0
+
+
+	//small inputs and selects in filters
+	input[type="text"]
+		display: block
+		font-size: 11px
+		padding: 2px 6px !important
+		min-height: 26px !important
+
+	select
+		min-height: 26px
+		height: 26px !important
+
+	[data-reset]
+		cursor: pointer
+
+.top-filters .filter-block .bootstrap-select, .bootstrap-select.small
+	&.btn-group .btn 
+		.filter-option
+			left: 7px
+		.caret
+			right: 6px
+
+	.dropdown-toggle
+		padding: 2px 6px !important
+		font-size: 11px
+		height: 26px
+	.dropdown-menu
+		font-size: 11px
+		> li > a
+			line-height: 20px
+			padding: 1px 20px 1px 7px
+
+	&.btn-group.show-tick .dropdown-menu li.selected a i.check-mark
+		right: 7px
+		margin-top: 0
+
+	.bootstrap-select-searchbox
+		padding: 3px !important
+		input[type=text]
+			box-shadow: none
+			border: none
+			outline: none
+			&:focus
+				box-shadow: inset 0 0 6px -4px !important
+
+.custom-date-picker
+	position: relative
+	a
+		+opacity(.5)
+		width: 20px
+		height: 26px
+		position: absolute
+		font-size: 1.2em
+		top: 0px
+		color: #000
+		padding-top: 5px
+		&:hover
+			+opacity(.8)
+		&.prev 
+			left: 0
+			&:before
+				margin-left: 5px
+		&.next
+			right: 0
+			&:before
+				margin-left: 9px
+
+.tabs-shadow
+	+box-shadow(0 0 2px #ccc)
+
+.upload-image
+	display: block
+	border: 2px dashed $gray
+	text-align: center
+	+border-radius(6px)
+	&:hover
+		border-color: darken($gray, 20%)
+
+.menu-top.small
+	float: left
+	margin-top: 22px
+	margin-left: 30px
+	display: none 
+	width: 18px !important
+	
+	@media (max-width: 767px)
+		display: block 
+
+	ul
+		list-style: none
+	
+	ul.menu
+		margin-top: 0
+		> li 
+			position: static
+
+			div
+				position: static
+				padding-top: 0
+				
+			&:hover
+				ul.inside
+					display: block
+
+		ul.inside
+			display: none
+
+			li
+				position: relative
+				div
+					position: absolute !important
+					left: 200px !important
+					top: 0 !important
+					display: none !important
+					padding-left: 1px
+					padding-top: 0 !important
+					ul
+						li
+							background: white 
+						a
+							color: #6f7b8a  !important
+				&:hover
+					div
+						display: block !important
+						ul
+							li
+								&:hover
+									background: $blue !important 
+									a
+										color: white !important 
+ 
+.nav-tabs
+	> li.active font-size
+		> a
+			border-width: 1px
+			&:hover
+				border-width: 1px
+	&.top
+		margin-top: -67px
+		background: none
+		>li
+			background: #d1dade
+
+.tab-content
+	border: 1px solid #dddddd
+	border-top: none
+	&.top
+		border: none 
+		.tab-pane
+			padding-left: 0
+			padding-right: 0
+
+.tab-content
+	overflow: visible
+
+.droppable
+	.tab-content
+		position: static
+
+.btn-cons
+	min-width: 30px
+
+.language-selector
+	.btn
+		padding: 2px 10px
+
+//DATERANGE PICKER
+.daterangepicker 
+	.calendar 
+		th, td
+			padding: 4px 6px
+			
+	td.active, td.active:hover
+		background-color: #0090d9 !important
+		background-image: none !important
+
+	.ranges .range_inputs 
+		> div
+			float: none !important
+
+			&:nth-child(2)
+				padding-left: 0 !important
+				margin-bottom: 10px
+		> button
+			font-size: smaller
+
+.datepicker table tr 
+	td
+		span.active
+			background-color: #0090d9 !important
+			background-image: none !important
+
+			&:hover, &.disabled, &.disabled:hover
+				background-color: #0090d9 !important
+				background-image: none !important
+
+	td.active
+		background-color: #0090d9 !important
+		background-image: none !important
+
+		&:hover, &.disabled, &.disabled:hover
+			background-color: #0090d9 !important
+			background-image: none !important
+
+//jGrowl
+.jGrowl-notification.ui-state-highlight
+	background: #fbf9ee !important
+	color: #363636 !important
+
+#limit-window
+	background: rgba(#999, 0.3)
+	position: fixed
+	z-index: 1000
+	font-size: 60px
+	font-weight: bold
+	padding: 0 30px
+	top: 70px
+	right: 20px
+	color: #333
+	-webkit-border-radius: 7px
+	-moz-border-radius: 7px
+	border-radius: 7px
+
+//choices
+.select2-container-multi .select2-choices 
+	.select2-search-field 
+		input
+			&:focus
+				border: none !important
+				+box-shadow(none !important)
+				background: none !important
+				background-color: none !important
+	.select2-search-choice
+		background-color: #0090d9 !important
+		color: white !important
+		+border-radius(4px !important) 
+		
+		.select2-search-choice-close:before
+			color: white !important	
+
+.select2-container-multi.select2-container-active 
+	.select2-search-choice
+		background-color: #0090d9 !important
+
+.select2-results li 
+	display: inline-block !important
+	background: #d1dade
+	margin-right: 5px
+	+border-radius(3px)
+	padding-left: 0	
+
+.right-menu  
+	ul
+		list-style: none
+		margin: 0 -15px
+		padding: 0
+		font-size: 15px
+		margin-top: -14px
+
+		li
+			padding: 0
+			&.active a
+				background: #0090d9
+				color: white
+			a	
+				padding: 5px 10px
+				display: block
+				border-radius: 5px 
+
+.header 
+	.header-seperation  
+		height: 61px
+	.chat-toggler
+		min-width: 35px !important
+		margin-left: 20px
+
+		> a
+			float: left
+
+			@media (max-width: 1000px)
+				display: none
+
+		.profile-pic
+			float: left
+
+	.nav.logo2 > li.quicklinks > a
+		padding: 0 !important
+
+	.quick-section
+		margin-left: 10px
+
+		@media (max-width: 320px)
+			margin-top: 6px 
+		@media (max-width: 480px)
+			margin-top: 6px
+
+	@media (max-width: 320px)
+		min-height: 40px
+
+	@media (max-width: 480px)
+		min-height: 40px
+
+.hscroll
+	overflow-x: auto
+	table
+		max-width: 100000px 
+
+.ui-autocomplete 
+	position: absolute
+	cursor: default
+	z-index: 100 !important
+
+.table
+	width: auto
+	&.flexible
+		width: 100%
+		min-width: 100%
+
+.jq-selectbox 
+	li.sel:before
+		color: black 
+		content: "\f00c"
+		font-family: FontAwesome
+		display: inline-block
+		margin-left: -17px
+		margin-right: 6px
+
+	li.selected:before 
+		content: "\f00c"
+		font-family: FontAwesome
+		display: inline-block
+		margin-left: -17px
+		margin-right: 6px
+		color: white !important
+
+#top-filters
+	.jq-selectbox__select
+		height: 25px
+		font: 13px/30px Arial, Tahoma, sans-serif
+
+		.jq-selectbox__select-text
+			height: 25px
+			line-height: 24px
+
+		.jq-selectbox__trigger-arrow
+			top: 11px
+
+	.jq-selectbox__dropdown
+		top: 27px
+		font: 13px/18px Arial, Tahoma, sans-serif
+
+//datepicker
+.input-append.success 
+	.add-on
+		margin-left: -35px
+		height: 36px
+
+.bootstrap-select.btn-group.small .btn .filter-option
+	right: 20px
+
+.modal
+	outline: none
+	.moveable
+		cursor: move
+
+	&[data-backdrop]
+		.modal-content
+			+box-shadow(-1px -1px 3px #e8e8e8)
+	&.small
+		.modal-content
+			.modal-header
+				padding: 5px !important
+			.modal-title
+				font-size: 16px !important
+	.modal-content
+		+border-radius(0)
+		.modal-header, .modal-footer
+			border: 1px solid #dddddd
+			background: $gray-bg
+		.modal-body
+			background: none
+			padding: 0
+
+	.modal-footer 
+		padding: 10px !important
+
+	.modal-header 
+		padding: 10px !important
+
+.droppable-image
+	div
+		&:nth-child(2n)
+			width: 150px
+			.browse
+				border: none
+				width: 93px
+				margin: auto
+
+.date-success
+	// width: 150px !important
+	line-height: 1.5px !important
+	height: 36px !important
+	span
+		background: $blue !important
+		margin-left: -35px !important
+		display: inline-block
+		float: left
+		position: relative !important
+		height: 36px !important
+				
+		span.arrow
+			color: $blue !important
+			position: absolute !important
+			left: 29px !important
+
+		i
+			color: #fff  
+
+.scrollup 
+	position: fixed
+	background: rgba(126, 126, 126, 0.4)
+	bottom: 40px 
+	left: inherit
+	right: 20px
+	height: 46px 
+	+transition(0.8s) 
+	width: 45px 
+	text-indent: 0 !important
+	+border-radius(3px) 
+	&:after
+		position: absolute
+		left: 14px
+		top: 0
+		font-size: 30px
+		color: white
+		font-weight: bold
+		content: "\f106" !important
+		font-family: 'FontAwesome'
+		height: 20px
+		width: 20px
+		display: block
+	&:hover
+		background: rgba(126, 126, 126, 0.8)
+
+.semi-bold
+	font-weight: 700px
+
+.ui-sortable-placeholder
+	background: #f4f4f4 !important
+	border: 1px dashed #ccc !important
+	+border-radius(2px)	
+	visibility: visible !important
+
+@media print
+	#main-header, 
+	.page-content .page-header,
+	#yii2-debug-toolbar,
+	#yii2-debug-toolbar-min
+		display: none
+// menu////	
+#buttonsDiv
+	a.btn
+		font-weight: bold
+#rootDiv
+	+border-radius(3px)
+	height: 465px !important
+	background: #ebf6fb
+	border: 1px solid #bfd4de
+	overflow-y: auto
+	width: 310px
+	margin-top: 20px
+	padding: 0 !important						
+	span.date 
+		width: 220px
+		font-weight: bold
+		margin-bottom: 5px
+		display: inline-block
+	.getMenu
+		margin-bottom: 3px
+		border: 1px solid transparent
+		+border-radius(3px)
+		a
+			color: #5e5e5e	
+			font-size: 16px
+			width: 100%
+			padding: 3px 9px
+			display: inline-block
+		&:hover
+			background: #00a0f0
+			a
+				color: white
+		&.active
+			background: #0088cc	
+			a
+				color: white !important
+#treeDiv
+	width: 300px
+	height: 560px
+	padding: 10px
+	top: 193px
+	margin-top: 30px !important
+	margin-left: 315px !important
+#vakata-contextmenu
+	border: none !important
+	ul
+		background: white
+		li.vakata-separator.vakata-separator-after
+			border-top: none !important
+		a
+			color: $dark-gray !important
+			padding: 3px !important
+			display: block
+			width: 100% !important
+			margin: 0 !important
+			&:hover
+				background: #e8eff7 !important
+				+border-radius(3px)
+				border: none !important
+			&.active
+				background: #829EBD !important 
+				color: white !important							
+.alert
+	.close
+		background: url("../img/icon/noti-cross.png") no-repeat scroll 0 0 transparent
+		background-position: -8px -10px
+		width: 11px
+		height: 11px
+		position: relative
+		opacity: 0.8
+		top: 4.5px
+		margin-left: 20px
+		border: none
+#avatar-container
+	a.btn-success
+		width: 153px
+		font-size: 14px
+
+
+.language-selector
+	position: fixed
+	top: 80px
+	right: 20px

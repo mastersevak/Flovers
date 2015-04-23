@@ -1,0 +1,45 @@
+.style_chooser {
+  list-style: none;
+  margin: none;
+  margin-bottom: 20px;
+  padding: none;
+}
+.style_chooser li {
+  float: left;
+  margin-right: 5px;
+}
+.style_chooser li a {
+  width: 34px;
+  height: 30px;
+}
+
+.photos_list li{
+	float: left;
+	width: 49%;
+	margin-right: 2%;
+	margin-bottom: 15px;
+}
+
+.photos_list li:nth-child(2n){
+	margin-right: 0;
+}
+
+.photos_list li img{
+	float: left;
+	margin-right: 15px;
+	height: 70px;
+}
+
+.photos_list li div{
+	position: absolute;
+	margin-left: 100px;
+	width: 100%;
+	padding-right: 100px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.photos_list li textarea{
+	height: 82px;
+}

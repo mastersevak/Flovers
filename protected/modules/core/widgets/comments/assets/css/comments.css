@@ -1,0 +1,49 @@
+.popup.comments {
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+  z-index: 1000;
+  background: #f2f4f6;
+  padding: 20px;
+  width: 400px;
+  font-size: 13px;
+  margin-bottom: 0 !important;
+  overflow: hidden;
+  *zoom: 1; }
+  .popup.comments .scroller:empty {
+    background: url('../img/loaders/20.GIF?1415548626') no-repeat center center; }
+  .popup.comments span.empty {
+    text-align: center;
+    display: block;
+    font-size: 18px; }
+  .popup.comments form {
+    background: white; }
+  .popup.comments .input-block {
+    border: 1px solid #ddd;
+    border-top: none;
+    margin: 0;
+    padding: 10px 0;
+    background: rgba(247, 247, 247, 0.36); }
+    .popup.comments .input-block textarea {
+      padding: 0 10px !important;
+      border: none;
+      width: 100%;
+      height: 50px;
+      background: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      outline: none !important; }
+  .popup.comments .comment {
+    margin-bottom: 20px; }
+    .popup.comments .comment p.body {
+      font-size: 15px; }
+  .popup.comments .date {
+    float: right;
+    text-align: right;
+    line-height: 19px;
+    font-size: 12px;
+    font-weight: 600; }
+    .popup.comments .date span {
+      display: block;
+      font-weight: normal;
+      font-size: 11px; }

@@ -1,0 +1,113 @@
+@import "compass" 
+
+body
+	.inputStyler-wrap  
+		position: relative
+
+		.inputStyler-viewWrap
+			font-size: 14px
+			font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif
+			height: 26px !important
+			line-height: 20px
+			background-color: white
+			border: 1px solid #d9d9d9
+			// overflow: visible !important
+			border-top: 1px solid silver
+			+border-radius(2px)
+			cursor: default
+			white-space: nowrap
+			display: block
+			outline: none
+				
+			&.active
+				border: transparent
+				border-top: transparent
+
+			&.small
+				height: 26px !important
+				line-height: 19px !important
+				font-size: 11px !important
+
+			input
+				width: 100%
+				outline: none !important
+
+				&:focus
+					border-color: rgba(82, 168, 236, 0.8) !important
+					box-shadow: 0 0 10px rgba(82, 168, 236, 0.6)!important
+		ul
+			white-space: nowrap
+			position: absolute
+			z-index: 2000
+			list-style: none
+			margin-bottom: 0
+			left: 0
+			padding: 0
+			background-color: white !important
+			font-size: 11px
+			-moz-border-radius: 2px
+			-webkit-border-radius: 2px
+			-moz-box-shadow: 1px 1px 3px #dddddd
+			-webkit-box-shadow: 1px 1px 3px #dddddd
+			box-shadow: 1px 1px 3px #dddddd
+			border-radius: 2px
+			overflow-y: auto
+			margin-top: 0
+			li 
+				font-size: 11px 
+				height: 22px
+				line-height: 20px
+				padding: 1px 5px 1px 7px
+				color: #5e5e5e
+				cursor: pointer
+				display: block
+				+border-radius(3px)
+				&:hover
+					background-color: #0088cc
+					color: #fff
+	
+		.resetInput
+			position: absolute
+			display: block
+			float: right
+			width: 20px 
+			height: 24px
+			background: white
+			top: 1px
+			right: 1px
+			&:after
+				position: absolute 
+				content: "\f00d"
+				font-family: FontAwesome
+				font-size: 11px
+				cursor: pointer
+				right: 6px
+				top: 3px
+
+		.inputStyler-view
+			display: block
+			width: 100%
+			height: 100%
+			font-size: 11px
+			padding: 2px 6px
+			color: buttontext
+			overflow: hidden
+
+			&.data-empty-attr
+				color: #A5A5A5
+
+	.inputStyler-listWrap
+		position: absolute
+		background: white
+		z-index: 2000
+		-webkit-box-shadow: 0px 0px 5px rgba(86, 96, 117, 0.5)
+		box-shadow: 0px 0px 5px rgba(86, 96, 117, 0.5)
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+		+border-radius(2px)
+		&:focus
+			border-color: rgba(82, 168, 236, 0.8)
+
+
+
+
+

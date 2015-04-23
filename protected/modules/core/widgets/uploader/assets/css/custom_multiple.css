@@ -1,0 +1,232 @@
+.qq-uploader { position:relative; width: 100%; min-height: 70px; margin-bottom: 20px;}
+
+.qq-upload-button {
+    display: none; /* or inline-block */
+    width: 105px; padding: 7px 0; text-align:center;    
+    background:#880000; border-bottom:1px solid #ddd;color:#fff;
+    margin-bottom: 20px;
+}
+.qq-upload-button-hover {background:#cc0000;}
+.qq-upload-button-focus {outline:1px dotted black;}
+
+.qq-upload-drop-area {
+   	text-align:center; 
+
+	border: 1px dashed #ddd ;
+	border-radius: 10px;
+	-moz-border-radius: 10px ;
+	-webkit-border-radius: 10px;
+	color: #323a41 ;	
+
+	padding: 5px;
+	padding-right:8px;
+	background: #fcfcfc;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 20px;
+
+    outline: none;
+    cursor: pointer;
+}
+.qq-upload-drop-area > span {
+    display:block; 
+    width:100%; 
+    font-size:16px;
+    text-indent: -9999px;
+    background:url(../images/dragdrop-small.png) no-repeat center ;
+    min-height: 75px;
+    border: 2px dashed transparent;
+
+    border-radius: 10px;
+	-moz-border-radius: 10px ;
+	-webkit-border-radius: 10px;
+}
+.qq-upload-drop-area-active, .qq-upload-drop-area:hover {
+	background:#e8e8e8;
+}
+
+.qq-upload-drop-area-active > span, .qq-upload-drop-area:hover > span{
+	
+	border: 2px dashed #7e858c;
+}
+
+.qq-upload-list {margin:0; padding:0; list-style:none;}
+
+.qq-upload-list{
+	/*position: absolute;*/
+	/*top: 105px;*/
+	/*padding-top: 105px;*/
+}
+
+.qq-upload-list > li { 
+	margin:0; padding:0; 
+	line-height:15px; 
+	font-size:12px; 
+	position: relative;
+	width:120px;
+	height:120px;
+	background: #f4f4f4;
+	float: left;
+	margin-right:10px;
+	margin-bottom: 10px;
+
+	border-radius: 3px;
+	-moz-border-radius: 3px ;
+	-webkit-border-radius: 3px;
+
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+
+	border: 1px dashed #cbd2d7;
+
+}
+
+.qq-upload-list > li.qq-upload-success{
+	background: white; 
+	border:1px solid #cbd2d7;
+	padding: 5px;
+
+	/*cursor:pointer;*/
+}
+
+.qq-upload-failed-text {
+    margin-right: 7px;
+}
+
+.qq-upload-file {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 5;
+	width: 108px;
+	height: 108px;
+
+	overflow: hidden;
+}
+
+.qq-upload-list > li .qq-upload-file img{
+	opacity: 0.7;
+	transition: opacity .2s;
+	-moz-transition: opacity .2s;
+	-webkit-transition: opacity .2s;
+}
+
+.qq-upload-list > li:hover .qq-upload-file img{
+	opacity: 1;
+}
+
+.qq-upload-list > li .qq-upload-file{
+	display: none;
+}
+
+.qq-upload-list > li.qq-upload-success .qq-upload-file{
+	display: block;
+}
+
+.qq-upload-spinner{
+	background: url(../images/loader6.gif);
+	width: 31px;
+	height: 31px;
+	vertical-align: text-bottom;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -15px;
+	margin-top: -25px;
+}
+.qq-upload-cancel {
+	text-indent: -9999px;
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: url(../images/cancel.png) no-repeat;
+	right: -8px;
+	top: -5px;
+	display: none;
+}
+
+.qq-upload-list > li:hover{
+	box-shadow: 0 0 5px #aaa;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	-moz-box-shadow: 0 0 5px #aaa;
+}
+
+.qq-upload-list > li:hover .qq-upload-cancel{
+	display: block;
+}
+
+.qq-upload-size{
+	position: absolute;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	left:50%;
+	top:50%;
+	margin-right:0;
+	margin-left:-50px;
+	margin-top:12px;
+}
+
+.qq-upload-list > li .tools{
+	position: absolute;
+	background: white;
+	z-index: 10;
+	right: 0;
+	padding: 0px 4px;
+	color: #808080;
+
+	-webkit-box-shadow:  -1px 1px 1px #999;
+	-moz-box-shadow:  -1px 1px 1px #999;
+	box-shadow:  -1px 1px 1px #999;
+
+	border-bottom-left-radius:5px;
+	-moz-border-bottom-left-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+
+	display: none;
+}
+
+.qq-upload-list > li.qq-upload-success:hover .tools{
+	display: block; 
+	font-size: 14px; 
+	padding-bottom: 2px;
+}
+
+.qq-upload-list > li .tools .tool{
+	width: 14px;
+	height: 15px;
+	background-color: white;
+	z-index:7;
+	/*background-image: url(images/spr-screen-tools.png);*/
+	background-repeat: no-repeat;
+
+	cursor:pointer;
+	display:inline-block;
+	padding:2px;
+	margin-left:-2px;
+}
+
+.qq-upload-list > li .tools .tool:hover{
+	color: black;
+}
+
+.qq-upload-list li .tool.qq-upload-delete{
+	background-position: -70px -4px;
+	top:4px; right: 4px;
+}
+.qq-upload-list li .tool.qq-upload-move{
+	background-position: -101px -4px;
+	top:4px; right: 26px;
+}
+
+/*.qq-upload-list li .tool.qq-upload-view:hover{background-position: -6px -34px}
+.qq-upload-list li .tool.qq-upload-delete:hover{background-position: -70px -34px}
+.qq-upload-list li .tool.qq-upload-move:hover{background-position: -101px -34px}
+*/
+.qq-upload-failed-text {display:none;}
+.qq-upload-fail .qq-upload-failed-text {display:inline;}
+
+.qq-drop-processing, .qq-upload-status-text{display: none}

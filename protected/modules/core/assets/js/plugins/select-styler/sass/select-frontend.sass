@@ -1,0 +1,195 @@
+@import "compass"
+
+.tblselect 
+	display: inline-block
+
+.selectStyler-wrap
+	font-family: Arial sans-serif
+	display: inline-block
+	
+
+	&:not(.multiple) 
+		.selectStyler-list li.active
+			background-color: #0088cc
+			color: white
+	
+	&.multiple .active:before 
+		float: right
+		content: "\f00c"
+		font-family: FontAwesome
+		height: 20px
+		display: inline-block 
+
+	.selectStyler-view 
+		padding: 6px 12px
+		font-size: 12px
+		font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif
+		height: 40px
+		line-height: 19px
+		background-color: white
+		color: #5e5e5e
+		position: relative
+		cursor: default
+		white-space: nowrap
+		overflow: hidden 
+		display: block
+		border: 1px solid #DADADA
+
+		+border-radius(3px)
+
+		&:focus
+			+box-shadow(1px 1px 3px #dddddd inset)
+			background: whitesmoke
+			outline: none
+			div
+				background: whitesmoke !important
+
+		button
+			display: block
+			width: 100%
+			background: transparent
+			border: none
+			height: 100%
+			outline: none
+			text-align: left
+			padding: 0
+
+			&:focus
+				outline: none
+
+		span
+			line-height: 20px
+
+		div
+			color: #7e7e7e
+			position: absolute
+			top: 2px
+			right: 0px
+			cursor: pointer
+			width: 29px
+			height: 31px
+			cursor: pointer
+			background: white
+			&:before	
+				font-family: FontAwesome
+				display: inline-block
+				position: absolute
+				right: 6px
+				top: 6px
+				
+		div.selectArrow:before 
+			content: "\f0d7"
+			font-size: 15px
+			&:focus
+				background: whitesmoke !important
+		div.resetSelect:before 
+			content: "\f00d"
+			font-size: 13px
+
+
+		
+	.selectStyler-listWrap
+		position: absolute
+		background: white
+		z-index: 2000
+		-webkit-box-shadow: 0px 0px 5px rgba(86, 96, 117, 0.5)
+		box-shadow: 0px 0px 5px rgba(86, 96, 117, 0.5)
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+		+border-radius(2px)
+		&:focus
+			border-color: rgba(82, 168, 236, 0.8)
+
+	.selectStyler-searchWrap
+		background: #F4F5F7
+		line-height: 1.5
+		color: #6f7b8a
+		border: 1px solid #ECEDEF
+		transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s
+		margin: 3px
+		+border-radius(2px)
+
+		input
+			background: none
+			width: 100%
+			font-size: 11px
+			border: none
+			outline: none
+			display: block
+			padding: 2px 6px !important
+			min-height: 30px
+			&:focus
+				border: none
+				-webkit-box-shadow: none !important
+				box-shadow: none !important
+
+	.selectStyler-list 
+		list-style: none
+		position: relative
+		margin-bottom: 0
+		left: 0
+		padding: 0
+		background-color: white
+		font-size: 11px
+		+border-radius(2px)
+		overflow-y: auto
+
+		li 
+			padding: 1px 5px 1px 7px
+			cursor: pointer
+			line-height: 25px
+			position: relative
+			+border-radius(3px)
+			white-space: nowrap
+			font-size: 12px
+			&:hover
+				background-color: lighten(#0088cc, 7%)
+				color: white
+
+	.selectStyler-blue
+		background-color: #0088cc 
+		color: white
+
+	.data-empty-attr
+		color: #A5A5A5
+
+
+.selectStyler-wrap.small, 
+.grid-view tr.filters td .selectStyler-wrap
+	.selectStyler-view
+		height: 26px !important
+		line-height: 19px !important
+		font-size: 11px !important
+		padding: 3px 8px
+		span
+			line-height: 20px
+		button
+			font-size: 12px
+		div
+			height: 24px
+			&:before
+				font-size: 11px !important
+				top: 1px!important
+			&.selectArrow:before 
+				content: "\f0d7"
+			&.resetSelect:before 
+				content: "\f00d"
+
+	.selectStyler-searchWrap
+		input
+			min-height: 26px
+	.selectStyler-list 
+		li
+			line-height: 20px !important
+			font-size: 11px !important
+	
+/////////////////////////////////////
+.qq-upload-list > li
+	width: 120px !important
+	height: 120px !important
+	margin-right: 25px !important
+	margin-bottom: 20px !important
+
+	&:nth-child(4n)
+		margin-right: 0 !important
+
+
