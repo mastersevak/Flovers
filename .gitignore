@@ -1,0 +1,16 @@
+/.htaccess
+/protected/runtime
+.sass-cache
+/protected/config/devel*
+/assets
+
+/storage/*
+!/storage/placeholders
+
+.buildpath
+/.project
+/.settings
+*.codekit
+*~
+
+/.idea
